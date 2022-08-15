@@ -3,6 +3,11 @@
   <img  src="https://raw.githubusercontent.com/Elanza-48/Elanza-48/main/resources/img/github-contribution-grid-snake.svg"
     alt="example" />
 </p>
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
+
 <!--
 **Matteo406/Matteo406** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
