@@ -7,7 +7,7 @@ on:
     - cron: '30 18 * * *'
 jobs:
   update-readme:
-    name: Update Readme with stats ${{ secrets.WAKATIME_API_KEY }}
+    name: 'Update Readme with stats ${{ secrets.WAKATIME_API_KEY }}'
     
     runs-on: ubuntu-latest
     steps:
