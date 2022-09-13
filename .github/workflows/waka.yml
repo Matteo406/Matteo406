@@ -22,3 +22,4 @@ jobs:
           SHOW_MASKED_TIME: true
           SHOW_LINES_OF_CODE: true
           SHOW_TOTAL_CODE_TIME: true
+          SHOW_LANGUAGE_PER_REPO: true
