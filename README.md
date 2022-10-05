@@ -2,13 +2,13 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 09 August 2022 - To: 02 October 2022
+From: 09 August 2022 - To: 03 October 2022
 
-Total Time: 174 hrs 7 mins
+Total Time: 182 hrs 58 mins
 
-JavaScript   101 hrs 46 mins ██████████████▓░░░░░░░░░░   58.45 %
-AL           33 hrs 51 mins  █████░░░░░░░░░░░░░░░░░░░░   19.45 %
-Other        13 hrs 51 mins  ██░░░░░░░░░░░░░░░░░░░░░░░   07.96 %
+JavaScript   109 hrs 37 mins ███████████████░░░░░░░░░░   59.91 %
+AL           33 hrs 51 mins  ████▓░░░░░░░░░░░░░░░░░░░░   18.51 %
+Other        13 hrs 51 mins  ██░░░░░░░░░░░░░░░░░░░░░░░   07.58 %
 ```
 
 <!--END_SECTION:waka-->
