@@ -2,15 +2,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 09 August 2022 - To: 22 April 2024
+From: 09 August 2022 - To: 23 April 2024
 
-Total Time: 1,111 hrs 57 mins
+Total Time: 1,114 hrs 37 mins
 
-TypeScript        408 hrs 52 mins █████████▒░░░░░░░░░░░░░░░   36.77 %
-JavaScript        300 hrs 24 mins ██████▓░░░░░░░░░░░░░░░░░░   27.02 %
-AL                166 hrs 48 mins ███▓░░░░░░░░░░░░░░░░░░░░░   15.00 %
-Markdown          53 hrs 43 mins  █▒░░░░░░░░░░░░░░░░░░░░░░░   04.83 %
-Python            51 hrs 52 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.66 %
+TypeScript        410 hrs 39 mins █████████▒░░░░░░░░░░░░░░░   36.84 %
+JavaScript        300 hrs 24 mins ██████▓░░░░░░░░░░░░░░░░░░   26.95 %
+AL                167 hrs 37 mins ███▓░░░░░░░░░░░░░░░░░░░░░   15.04 %
+Markdown          53 hrs 44 mins  █▒░░░░░░░░░░░░░░░░░░░░░░░   04.82 %
+Python            51 hrs 52 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.65 %
 ```
 
 <!--END_SECTION:waka-->
