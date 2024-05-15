@@ -33,7 +33,7 @@ def on_click(x, y, button, pressed):
 def save_counts():
     global last_key_count, last_click_count
 
-    # Only commit and push if the counts have changed
+    # Only save to file if the counts have changed
     if key_count != last_key_count or click_count != last_click_count:
         with open(log_file, 'w') as f:
             f.write(f'<!--START_SECTION:activity-->\n\n')
@@ -44,18 +44,22 @@ def save_counts():
             f.write(f'```\n')
             f.write(f'\n<!--END_SECTION:activity-->\n')
 
-        # Commit and push
-        repo = git.Repo(repo_dir)
-        repo.git.add(log_file)
-        repo.git.commit('-m', 'update log file')
-        repo.git.push()
-
         # Update last counts
         last_key_count = key_count
         last_click_count = click_count
 
+def commit_and_push():
+    # Commit and push
+    repo = git.Repo(repo_dir)
+    repo.git.add(log_file)
+    repo.git.commit('-m', 'update log file')
+    repo.git.push()
+
 # Schedule the save_counts function to be called every 5 minutes
-schedule.every(1).minutes.do(save_counts)
+schedule.every(5).minutes.do(save_counts)
+
+# Schedule the commit_and_push function to be called every hour
+schedule.every(1).hours.do(commit_and_push)
 
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
