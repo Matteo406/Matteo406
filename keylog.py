@@ -37,11 +37,11 @@ def save_counts():
     if key_count != last_key_count or click_count != last_click_count:
         with open(log_file, 'w') as f:
             f.write(f'<!--START_SECTION:activity-->\n\n')
-            f.write(f'```txt')
+            f.write(f'```txt\n')
             f.write(f'From: {datetime.now().strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
             f.write(f'Total Keystrokes: {key_count}\n')
             f.write(f'Total Mouse Clicks: {click_count}\n')
-            f.write(f'```')
+            f.write(f'```\n')
             f.write(f'\n<!--END_SECTION:activity-->\n')
 
         # Commit and push
@@ -55,7 +55,7 @@ def save_counts():
         last_click_count = click_count
 
 # Schedule the save_counts function to be called every 5 minutes
-schedule.every(5).minutes.do(save_counts)
+schedule.every(1).minutes.do(save_counts)
 
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:

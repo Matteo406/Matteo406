@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Replace activity stats in README
         run: |
-          sed -i '/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/!b;//!d' README.md
+          sed -i '/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/d' README.md
           echo '<!--START_SECTION:activity-->' >> README.md
           cat log_file.txt >> README.md
           echo '<!--END_SECTION:activity-->' >> README.md
