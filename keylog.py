@@ -56,10 +56,11 @@ def commit_and_push():
     repo.git.push()
 
 # Schedule the save_counts function to be called every 5 minutes
-schedule.every(5).minutes.do(save_counts)
+schedule.every(1).minutes.do(save_counts)
 
 # Schedule the commit_and_push function to be called every hour
-schedule.every(1).hours.do(commit_and_push)
+# schedule.every(1).hours.do(commit_and_push)
+schedule.every(1).minutes.do(commit_and_push)
 
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
