@@ -32,7 +32,7 @@ jobs:
         run: |
           sed -i '/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/!b;//!d' README.md
           echo '<!--START_SECTION:activity-->' >> README.md
-          cat logfile.txt >> README.md
+          cat log_file.txt >> README.md
           echo '<!--END_SECTION:activity-->' >> README.md
       - name: Commit and push if changed
         run: |
