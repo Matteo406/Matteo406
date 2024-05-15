@@ -28,8 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Update activity stats
-        run: python update_activity.py
+      - name: Replace activity stats in README
+        run: |
+          sed -i '/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/!b;//!d' README.md
+          echo '<!--START_SECTION:activity-->' >> README.md
+          cat logfile.txt >> README.md
+          echo '<!--END_SECTION:activity-->' >> README.md
       - name: Commit and push if changed
         run: |
           git diff
