@@ -1,10 +1,14 @@
 from pynput import keyboard, mouse
 from datetime import datetime
 from dotenv import load_dotenv
+import logging
 import git
 import os
 import schedule
 import time
+
+
+
 
 # Load the .env file
 load_dotenv()
@@ -12,6 +16,14 @@ load_dotenv()
 # Define the log file and the repo
 log_file = os.getenv('PATH_TO_LOGFILE')
 repo_dir = os.getenv('PATH_TO_REPO')
+
+
+# Configure logging
+logging.basicConfig(filename=repo_dir + 'taskLog.log', level=logging.INFO, format='%(asctime)s %(message)s')
+
+
+# Log script start
+logging.info('Script started')
 
 # Initialize counts
 key_count = 0
@@ -24,11 +36,13 @@ last_click_count = 0
 def on_press(key):
     global key_count
     key_count += 1
+    logging.info('Key press detected')
 
 def on_click(x, y, button, pressed):
     global click_count
     if pressed:
         click_count += 1
+        logging.info('Mouse click detected')
 
 def save_counts():
     global last_key_count, last_click_count
@@ -48,12 +62,16 @@ def save_counts():
         last_key_count = key_count
         last_click_count = click_count
 
+        logging.info('Script saved counts')
+
 def commit_and_push():
     # Commit and push
     repo = git.Repo(repo_dir)
     repo.git.add(log_file)
     repo.git.commit('-m', 'update log file')
     repo.git.push()
+    # Log script finish
+    logging.info('Script git pushed')
 
 # Schedule the save_counts function to be called every 5 minutes
 schedule.every(5).minutes.do(save_counts)
@@ -65,6 +83,13 @@ schedule.every(1).hours.do(commit_and_push)
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
     print('Listening...')
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    try:
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+            logging.info('Script finished sleeping (:')
+    except Exception as e:
+        logging.error('Script stopped due to error: %s', e)
+        raise
+    finally:
+        logging.info('Script ended')
