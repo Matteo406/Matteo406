@@ -1,8 +1,12 @@
 <!--START_SECTION:activity-->
 
-```txtFrom: 15 May 2024 - To: 15 May 2024
+```txt
 
-Total Keystrokes: 71
-Total Mouse Clicks: 16
+From: 15 May 2024 - To: 15 May 2024
+
+Total Keystrokes: 8
+Total Mouse Clicks: 9
 ```
+
+
 <!--END_SECTION:activity-->
