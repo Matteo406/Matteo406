@@ -1,15 +1,16 @@
 
 <!--START_SECTION:waka-->
 
-```text
-Total Time: 24 hrs 3 mins
+```txt
+From: 09 August 2022 - To: 13 May 2024
 
-JavaScript   16 hrs 20 mins  >>>>>>>>>>>>>>>>---------   64.36 %
-AL           5 hrs 45 mins   >>>>>>-------------------   22.71 %
-YAML         1 hr 13 mins    >------------------------   04.82 %
-JSON         36 mins         >------------------------   02.37 %
-TOML         33 mins         >------------------------   02.20 %
-Markdown     29 mins         -------------------------   01.95 %
+Total Time: 1,181 hrs 52 mins
+
+TypeScript        452 hrs 30 mins █████████▓░░░░░░░░░░░░░░░   38.29 %
+JavaScript        302 hrs 11 mins ██████▒░░░░░░░░░░░░░░░░░░   25.57 %
+AL                184 hrs 31 mins ████░░░░░░░░░░░░░░░░░░░░░   15.61 %
+Markdown          53 hrs 55 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.56 %
+Python            53 hrs 54 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.56 %
 ```
 
 <!--END_SECTION:waka-->
