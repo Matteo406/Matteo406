@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # Runs at 12am UTC
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 jobs:
   update-readme:
@@ -23,3 +23,17 @@ jobs:
           SHOW_LINES_OF_CODE: true
           SHOW_TOTAL_CODE_TIME: true
           SHOW_LANGUAGE_PER_REPO: true
+  update-activity-stats:
+    name: Update Activity Stats
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update activity stats
+        run: python update_activity.py
+      - name: Commit and push if changed
+        run: |
+          git diff
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git commit -am "Update activity stats in README.md" || echo "No changes to commit"
+          git push
