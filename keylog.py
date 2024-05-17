@@ -6,8 +6,7 @@ import git
 import os
 import schedule
 import time
-
-
+import sys
 
 
 # Load the .env file
@@ -17,6 +16,7 @@ load_dotenv()
 log_file = os.getenv('PATH_TO_LOGFILE')
 repo_dir = os.getenv('PATH_TO_REPO')
 
+lock_file = "script.lock"
 
 # Configure logging
 logging.basicConfig(filename=repo_dir + 'taskLog.log', level=logging.INFO, format='%(asctime)s %(message)s')
@@ -41,10 +41,8 @@ def getLastcount() -> tuple[int, int]:
         for line in lines:
             if 'Total Keystrokes' in line:
                 last_key_count = int(line.split(':')[-1].strip())
-                print("Last Key Count: ", last_key_count)
             if 'Total Mouse Clicks' in line:
                 last_click_count = int(line.split(':')[-1].strip())
-                print("Last Click Count: ", last_click_count)
 
     return last_key_count, last_click_count
 
@@ -52,13 +50,11 @@ def getLastcount() -> tuple[int, int]:
 def on_press(key):
     global key_count
     key_count += 1
-    logging.info('Key press detected')
 
 def on_click(x, y, button, pressed):
     global click_count
     if pressed:
         click_count += 1
-        logging.info('Mouse click detected')
 
 def save_counts():
     with open(log_file, 'w') as f:
@@ -74,22 +70,32 @@ def save_counts():
 
 def commit_and_push():
     # Commit and push
-    repo = git.Repo(repo_dir)
-    repo.git.add(log_file)
-    repo.git.commit('-m', 'update log file')
-    repo.git.push()
+    try: 
+        repo = git.Repo(repo_dir)
+        repo.git.add(log_file)
+        repo.git.commit('-m', 'update log file')
+        repo.git.push()
+        logging.info('Script git pushed')
+    except Exception as e:
+        print('Failed to push to repo')
+        logging.error('Failed to push to repo', e)
     # Log script finish
-    logging.info('Script git pushed')
 
 # Schedule the save_counts function to be called every 5 minutes
 schedule.every(5).minutes.do(save_counts)
 
 # Schedule the commit_and_push function to be called every hour
-# schedule.every(1).hours.do(commit_and_push)
-schedule.every(1).minutes.do(commit_and_push)
+schedule.every(1).hours.do(commit_and_push)
+# schedule.every(1).minutes.do(commit_and_push)
 
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
+    if os.path.exists(lock_file):
+        print("Another instance of the script is already running. Exiting.")
+        sys.exit()
+    else:
+        with open(lock_file, 'w') as file:
+            file.write("Lock file for script instance management.")
     print('Listening...')
     key_count, click_count = getLastcount()
     print("Key Count: ", key_count, "Click Count: ", click_count)
@@ -97,9 +103,9 @@ with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click
         while True:
             schedule.run_pending()
             time.sleep(1)
-            logging.info('Script finished sleeping (:')
     except Exception as e:
         logging.error('Script stopped due to error: %s', e)
         raise
     finally:
         logging.info('Script ended')
+        os.remove(lock_file)
