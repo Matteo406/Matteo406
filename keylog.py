@@ -33,6 +33,22 @@ click_count = 0
 last_key_count = 0
 last_click_count = 0
 
+
+def getLastcount() -> tuple[int, int]:
+    global key_count, click_count
+    with open(log_file, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            if 'Total Keystrokes' in line:
+                last_key_count = int(line.split(':')[-1].strip())
+                print("Last Key Count: ", last_key_count)
+            if 'Total Mouse Clicks' in line:
+                last_click_count = int(line.split(':')[-1].strip())
+                print("Last Click Count: ", last_click_count)
+
+    return last_key_count, last_click_count
+
+
 def on_press(key):
     global key_count
     key_count += 1
@@ -45,23 +61,15 @@ def on_click(x, y, button, pressed):
         logging.info('Mouse click detected')
 
 def save_counts():
-    global last_key_count, last_click_count
-
-    # Only save to file if the counts have changed
-    if key_count != last_key_count or click_count != last_click_count:
-        with open(log_file, 'w') as f:
-            f.write(f'<!--START_SECTION:activity-->\n\n')
-            f.write(f'```txt\n')
-            f.write(f'From: {datetime.now().strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
-            f.write(f'Total Keystrokes: {key_count}\n')
-            f.write(f'Total Mouse Clicks: {click_count}\n')
-            f.write(f'```\n')
-            f.write(f'\n<!--END_SECTION:activity-->\n')
-
-        # Update last counts
-        last_key_count = key_count
-        last_click_count = click_count
-
+    with open(log_file, 'w') as f:
+        f.write(f'<!--START_SECTION:activity-->\n\n')
+        f.write(f'```txt\n')
+        f.write(f'From: {datetime.now().strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
+        f.write(f'Total Keystrokes: {key_count}\n')
+        f.write(f'Total Mouse Clicks: {click_count}\n')
+        f.write(f'```\n')
+        f.write(f'\n<!--END_SECTION:activity-->\n')
+    # Log script save
         logging.info('Script saved counts')
 
 def commit_and_push():
@@ -77,12 +85,14 @@ def commit_and_push():
 schedule.every(5).minutes.do(save_counts)
 
 # Schedule the commit_and_push function to be called every hour
-schedule.every(1).hours.do(commit_and_push)
-# schedule.every(1).minutes.do(commit_and_push)
+# schedule.every(1).hours.do(commit_and_push)
+schedule.every(1).minutes.do(commit_and_push)
 
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
     print('Listening...')
+    key_count, click_count = getLastcount()
+    print("Key Count: ", key_count, "Click Count: ", click_count)
     try:
         while True:
             schedule.run_pending()
