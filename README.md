@@ -33,14 +33,15 @@ Markdown          54 hrs 17 mins  █░░░░░░░░░░░░░░�
 <!--END_SECTION:activity-->
 <!--END_SECTION:activity-->
 <!--END_SECTION:activity-->
+<!--END_SECTION:activity-->
 <!--START_SECTION:activity-->
 <!--START_SECTION:activity-->
 
 ```txt
-From: 17 May 2024 - To: 17 May 2024
+From: 21 May 2024 - To: 21 May 2024
 
-Total Keystrokes: 1862
-Total Mouse Clicks: 302
+Total Keystrokes: 7970
+Total Mouse Clicks: 1993
 ```
 
 <!--END_SECTION:activity-->
