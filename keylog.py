@@ -36,7 +36,7 @@ last_click_count = 0
 
 
 def getDates() -> tuple[datetime, datetime]:
-    with open("log_file.txt", 'r') as f:
+    with open(log_file, 'r') as f:
         lines = f.readlines()
         for line in lines:
             pattern = r"From: (\d{1,2} \w+ \d{4}) - To: (\d{1,2} \w+ \d{4})"
