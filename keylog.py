@@ -7,6 +7,7 @@ import os
 import schedule
 import time
 import sys
+import re
 
 
 # Load the .env file
@@ -32,6 +33,19 @@ click_count = 0
 # Initialize last counts
 last_key_count = 0
 last_click_count = 0
+
+
+def getDates() -> tuple[datetime, datetime]:
+    with open("log_file.txt", 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            pattern = r"From: (\d{1,2} \w+ \d{4}) - To: (\d{1,2} \w+ \d{4})"
+            match = re.search(pattern, line)
+            if match:
+                start_date = datetime.strptime(match.group(1), "%d %B %Y")
+                end_date = datetime.strptime(match.group(2), "%d %B %Y")
+                return start_date, end_date
+    return None, None
 
 
 def getLastcount() -> tuple[int, int]:
@@ -60,7 +74,10 @@ def save_counts():
     with open(log_file, 'w') as f:
         f.write(f'<!--START_SECTION:activity-->\n\n')
         f.write(f'```txt\n')
-        f.write(f'From: {datetime.now().strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
+        if start_date:
+            f.write(f'From: {start_date.strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
+        else:
+            f.write(f'From: {datetime.now().strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
         f.write(f'Total Keystrokes: {key_count}\n')
         f.write(f'Total Mouse Clicks: {click_count}\n')
         f.write(f'```\n')
@@ -97,9 +114,13 @@ with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click
         with open(lock_file, 'w') as file:
             file.write("Lock file for script instance management.")
     print('Listening...')
-    key_count, click_count = getLastcount()
-    print("Key Count: ", key_count, "Click Count: ", click_count)
+   
     try:
+        key_count, click_count = getLastcount()
+        start_date, end_date = getDates()
+        print(f"Start date: {start_date}")
+        print(f"End date: {end_date}")
+        print("Key Count: ", key_count, "Click Count: ", click_count)
         while True:
             schedule.run_pending()
             time.sleep(1)

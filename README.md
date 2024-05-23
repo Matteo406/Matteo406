@@ -1,4 +1,3 @@
-
 <!--START_SECTION:waka-->
 
 ```txt
@@ -14,26 +13,6 @@ Markdown          54 hrs 17 mins  █░░░░░░░░░░░░░░�
 ```
 
 <!--END_SECTION:waka-->
-
-
-
-
-
-
-
-
-
-
-
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--START_SECTION:activity-->
 <!--START_SECTION:activity-->
 
 ```txt
@@ -43,5 +22,4 @@ Total Keystrokes: 1862
 Total Mouse Clicks: 302
 ```
 
-<!--END_SECTION:activity-->
 <!--END_SECTION:activity-->
