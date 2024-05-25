@@ -13,6 +13,7 @@ Markdown          54 hrs 53 mins  █░░░░░░░░░░░░░░�
 ```
 
 <!--END_SECTION:waka-->
+<!--END_SECTION:activity-->
 <!--START_SECTION:activity-->
 <!--START_SECTION:activity-->
 
