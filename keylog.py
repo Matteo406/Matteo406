@@ -107,15 +107,14 @@ schedule.every(1).hours.do(commit_and_push)
 
 # Start the listeners
 with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
-    if os.path.exists(lock_file):
-        print("Another instance of the script is already running. Exiting.")
-        sys.exit()
-    else:
-        with open(lock_file, 'w') as file:
-            file.write("Lock file for script instance management.")
-    print('Listening...')
-   
     try:
+        if os.path.exists(lock_file):
+            print("Another instance of the script is already running. Exiting.")
+            sys.exit()
+        else:
+            with open(lock_file, 'w') as file:
+                file.write("Lock file for script instance management.")
+        print('Listening...')
         key_count, click_count = getLastcount()
         start_date, end_date = getDates()
         print(f"Start date: {start_date}")
@@ -130,3 +129,4 @@ with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click
     finally:
         logging.info('Script ended')
         os.remove(lock_file)
+        logging.info('Lock file removed.')

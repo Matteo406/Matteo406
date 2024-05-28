@@ -6,3 +6,5 @@ README.md
 
 taskLog.log
 .taskLog.log
+
+*.log
