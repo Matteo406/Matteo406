@@ -1,9 +1,9 @@
 <!--START_SECTION:activity-->
 
 ```txt
-From: 21 May 2024 - To: 30 May 2024
+From: 21 May 2024 - To: 31 May 2024
 
-Total Keystrokes: 37439
+Total Keystrokes: 37440
 Total Mouse Clicks: 7662
 ```
 
