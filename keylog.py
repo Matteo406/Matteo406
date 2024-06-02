@@ -87,10 +87,12 @@ def save_counts():
 
 def commit_and_push():
     # Commit and push
+    logging.info('start commit_and_push')
     try: 
         repo = git.Repo(repo_dir)
         repo.git.add(log_file)
         repo.git.commit('-m', 'update log file')
+        logging.info('created commit')
         repo.git.push()
         logging.info('Script git pushed')
     except Exception as e:
