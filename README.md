@@ -22,14 +22,15 @@ Python            56 hrs 36 mins  █░░░░░░░░░░░░░░�
 <!--END_SECTION:activity-->
 <!--END_SECTION:activity-->
 <!--END_SECTION:activity-->
+<!--END_SECTION:activity-->
 <!--START_SECTION:activity-->
 <!--START_SECTION:activity-->
 
 ```txt
-From: 21 May 2024 - To: 31 May 2024
+From: 21 May 2024 - To: 03 June 2024
 
-Total Keystrokes: 47072
-Total Mouse Clicks: 8941
+Total Keystrokes: 51925
+Total Mouse Clicks: 9650
 ```
 
 <!--END_SECTION:activity-->
