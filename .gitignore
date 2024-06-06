@@ -10,3 +10,5 @@ taskLog.log
 *.log
 
 taskLog.log
+script.lock
+taskLog.log

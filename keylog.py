@@ -1,6 +1,8 @@
 from pynput import keyboard, mouse
 from datetime import datetime
 from dotenv import load_dotenv
+import subprocess
+import json
 import logging
 import git
 import os
@@ -15,8 +17,9 @@ load_dotenv()
 
 
 # Define the log file and the repo
-log_file = os.getenv('PATH_TO_LOGFILE')
 repo_dir = os.getenv('PATH_TO_REPO')
+log_file = os.getenv('PATH_TO_LOGFILE')
+json_history_json = repo_dir + 'history.json'
 
 lock_file = "script.lock"
 
@@ -94,15 +97,30 @@ def commit_and_push():
         repo.git.add(log_file)
         repo.git.commit('-m', 'update log file')
         logging.info('created commit')
-        repo.git.push()
+        output = subprocess.check_output(['git', '-C', repo_dir, 'push', '-v'])
+        logging.info(output.decode())
         logging.info('Script git pushed')
     except Exception as e:
         print('Failed to push to repo')
         logging.error('Failed to push to repo', e)
     # Log script finish
 
+
+def save_to_json():
+    logging.info('start save_to_json')
+    try:
+        data = {'timestamp': str(datetime.now()), 'keystrokes': key_count, 'mouse_clicks': click_count}
+        with open(json_history_json, 'a') as f:
+            f.write(json.dumps(data) + '\n')
+    except Exception as e:
+        print('Failed to save to JSON')
+        logging.error('Failed to save to JSON', e)
+
+
 # Schedule the save_counts function to be called every 5 minutes
 schedule.every(1).minutes.do(save_counts)
+
+schedule.every(1).minute.do(save_to_json)
 
 # Schedule the commit_and_push function to be called every hour
 # schedule.every(1).hours.do(commit_and_push)
