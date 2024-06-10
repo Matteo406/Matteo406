@@ -9,6 +9,7 @@ from typing import Optional
 import time
 from memory_profiler import profile
 import re
+import git
 import sys
 
 
@@ -17,6 +18,7 @@ load_dotenv()
 
 # Define the log file and the repo
 repo_dir = os.getenv('PATH_TO_REPO')
+
 lockFile = 'script.lock'
 #timepattern
 timePattern = r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6}"
@@ -111,8 +113,10 @@ def analyseEvents(eventArray_p: list[object]):
         "AmountOfPrint": isPattern(pressEvents, '\\x10')
     }
 
-    if os.path.exists('stats.json'):
-        with open('stats.json', 'r') as f:
+    statsFilePath = repo_dir + 'stats.json'
+
+    if os.path.exists(statsFilePath):
+        with open(statsFilePath, 'r') as f:
             existing_data = json.load(f)
         for key, value in data.items():
             if key in existing_data:
@@ -121,7 +125,7 @@ def analyseEvents(eventArray_p: list[object]):
                 existing_data[key] = value
         data = existing_data
 
-    with open('stats.json', 'w') as f:
+    with open(statsFilePath, 'w') as f:
         json.dump(data, f, indent=4)
 
 
@@ -159,11 +163,28 @@ def onClickEventHandler(x, y, button, pressed):
     updateEventArray("Click", "", y, x, pressed)
 
 
+def commit_and_push():
+    # Commit and push
+    try: 
+        repo = git.Repo(repo_dir)
+        repo.git.add(repo_dir + 'stats.json')
+        repo.git.commit('-m', 'update stats file')
+        repo.git.push()
+        logging.info('Script git pushed')
+    except Exception as e:
+        print('Failed to push to repo')
+        logging.error('Failed to push to repo', e)
+    # Log script finish
+
+
+# Schedule the commit_and_push function to be called every hour
+schedule.every(1).hours.do(commit_and_push)
 
 
 def eventListener():
     with keyboard.Listener(on_press=onPressEventHandler) as k_listener, mouse.Listener(on_click=onClickEventHandler) as m_listener:
         while True:
+            schedule.run_pending()
             time.sleep(1)
 
 
@@ -199,6 +220,7 @@ def continueScriptCheck() -> bool:
         print('started today')
         sys.exit()
         return False
+    
 
 
 if __name__ == "__main__":
@@ -207,6 +229,9 @@ if __name__ == "__main__":
     try:
         if not continueScriptCheck():
             sys.exit()
+
+        if not repo_dir:
+            sys.exit("Error: repo_dir is empty")
 
         eventListener()
 
