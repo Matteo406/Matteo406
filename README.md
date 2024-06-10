@@ -13,19 +13,5 @@ Markdown          56 hrs 47 mins  █░░░░░░░░░░░░░░�
 ```
 
 <!--START_SECTION:activity-->
-'''txt
-AmountOfClicks  84 32.68 % 
-AmountOfPress   257 100.00 % 
-AmountOfCopy    2 0.78 % 
-AmountOfPaste   3 1.17 % 
-AmountOfSave    7 2.72 % 
-AmountOfCut     1 0.39 % 
-AmountOfUndo    1 0.39 % 
-AmountOfRedo    0 0.00 % 
-AmountOfSelectAll 1 0.39 % 
-AmountOfFind    2 0.78 % 
-AmountOfReplace 0 0.00 % 
-AmountOfPrint   0 0.00 % 
 
-'''
 <!--END_SECTION:activity-->
