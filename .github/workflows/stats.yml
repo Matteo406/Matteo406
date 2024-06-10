@@ -1,0 +1,40 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Update README
+        run: |
+          python -c "
+          import json
+          import re
+          with open('stats.json') as json_file:
+              data = json.load(json_file)
+          with open('README.md', 'r+') as readme:
+              content = readme.read()
+              table = '| Keyboard Shortcut | Description | Occurrences |\n| --- | --- | --- |\n'
+              for key, value in data.items():
+                  table += f'| {key} | {key} | {value} |\n'
+              new_content = re.sub('<!--START_SECTION:activity-->.*<!--END_SECTION:activity-->', f'<!--START_SECTION:activity-->\n{table}<!--END_SECTION:activity-->', content, flags=re.DOTALL)
+              readme.seek(0)
+              readme.write(new_content)
+              readme.truncate()
+          "
+      - name: Commit and push if changed
+        run: |
+          git diff
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git commit -am "Update activity stats in README.md" || echo "No changes to commit"
+          git push

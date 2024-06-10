@@ -1,153 +1,219 @@
-from pynput import keyboard, mouse
 from datetime import datetime
-from dotenv import load_dotenv
-import subprocess
-import json
+from pynput import keyboard, mouse
 import logging
-import git
 import os
+import json
+from dotenv import load_dotenv
 import schedule
+from typing import Optional
 import time
-import sys
+from memory_profiler import profile
 import re
+import sys
 
 
 # Load the .env file
 load_dotenv()
 
-
 # Define the log file and the repo
 repo_dir = os.getenv('PATH_TO_REPO')
-log_file = os.getenv('PATH_TO_LOGFILE')
-json_history_json = repo_dir + 'history.json'
-
-lock_file = "script.lock"
+lockFile = 'script.lock'
+#timepattern
+timePattern = r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6}"
 
 # Configure logging
-logging.basicConfig(filename=repo_dir + 'taskLog.log', level=logging.INFO, format='%(asctime)s %(message)s')
+logging.basicConfig(filename=repo_dir + 'taskLog2.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 
-# Log script start
-logging.info('Script started')
-
-# Initialize counts
-key_count = 0
-click_count = 0
-
-# Initialize last counts
-last_key_count = 0
-last_click_count = 0
+EventArray = []
+   
 
 
-def getDates() -> tuple[datetime, datetime]:
-    with open(log_file, 'r') as f:
-        lines = f.readlines()
-        for line in lines:
-            pattern = r"From: (\d{1,2} \w+ \d{4}) - To: (\d{1,2} \w+ \d{4})"
-            match = re.search(pattern, line)
-            if match:
-                start_date = datetime.strptime(match.group(1), "%d %B %Y")
-                end_date = datetime.strptime(match.group(2), "%d %B %Y")
-                return start_date, end_date
-    return None, None
+def isEventOfType(currentEvent: object, eventType: str):
+    if (currentEvent['Event'] == eventType):
+        return True
+    else:
+        return False
+    
 
 
-def getLastcount() -> tuple[int, int]:
-    global key_count, click_count
-    with open(log_file, 'r') as f:
-        lines = f.readlines()
-        for line in lines:
-            if 'Total Keystrokes' in line:
-                last_key_count = int(line.split(':')[-1].strip())
-            if 'Total Mouse Clicks' in line:
-                last_click_count = int(line.split(':')[-1].strip())
+def isPattern(eventArray_p: list[object],  patternPartOne: str = None, patternPartTwo: str = None, patternPartThree: str = None):
+    PatternOccurrence = 0
+    for index, event in enumerate(eventArray_p):
+        print('i: ', index, ' e: ', event)
 
-    return last_key_count, last_click_count
+        # Remove the extra quotes from the event key
+        event_key = event['key'].strip("'")
 
-
-def on_press(key):
-    global key_count
-    key_count += 1
-
-def on_click(x, y, button, pressed):
-    global click_count
-    if pressed:
-        click_count += 1
-
-def save_counts():
-    with open(log_file, 'w') as f:
-        f.write(f'<!--START_SECTION:activity-->\n\n')
-        f.write(f'```txt\n')
-        if start_date:
-            f.write(f'From: {start_date.strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
+        if event_key == patternPartOne:
+            print('works')
         else:
-            f.write(f'From: {datetime.now().strftime("%d %B %Y")} - To: {datetime.now().strftime("%d %B %Y")}\n\n')
-        f.write(f'Total Keystrokes: {key_count}\n')
-        f.write(f'Total Mouse Clicks: {click_count}\n')
-        f.write(f'```\n')
-        f.write(f'\n<!--END_SECTION:activity-->\n')
-    # Log script save
-        logging.info('Script saved counts')
+            print('shit')
 
-def commit_and_push():
-    # Commit and push
-    logging.info('start commit_and_push')
-    try: 
-        repo = git.Repo(repo_dir)
-        repo.git.add(log_file)
-        repo.git.commit('-m', 'update log file')
-        logging.info('created commit')
-        output = subprocess.check_output(['git', '-C', repo_dir, 'push', '-v'])
-        logging.info(output.decode())
-        logging.info('Script git pushed')
-    except Exception as e:
-        print('Failed to push to repo')
-        logging.error('Failed to push to repo', e)
-    # Log script finish
+        # # check for first pattern part
+        # if not event['key'] == patternPartOne:
+        #     print('skip')
+        #     continue
+        
+        #check for first pattern only first 
+        if event_key == patternPartOne and patternPartTwo is None:
+            # print('case 1')
+            PatternOccurrence = PatternOccurrence + 1
+            continue
+
+        # check if eventArray is long enough
+        if not len(eventArray_p) > index + 1:
+            continue
+
+        if event_key == patternPartOne and eventArray_p[index + 1]['key'] == patternPartTwo and patternPartThree is None:
+            # print('case 2')
+            PatternOccurrence = PatternOccurrence + 1
+            continue
+
+        # check if eventArray is long enough
+        if not len(eventArray_p) > index + 2:
+            continue
+
+        # check for the first, secon and third pattern
+        if event_key == patternPartOne and eventArray_p[index + 1]['key'] == patternPartTwo and eventArray_p[index + 2]['key'] == patternPartThree:
+            # print('case 3')
+            PatternOccurrence = PatternOccurrence + 1
+            continue
+    
+
+    return PatternOccurrence
 
 
-def save_to_json():
-    logging.info('start save_to_json')
-    try:
-        data = {'timestamp': str(datetime.now()), 'keystrokes': key_count, 'mouse_clicks': click_count}
-        with open(json_history_json, 'a') as f:
-            f.write(json.dumps(data) + '\n')
-    except Exception as e:
-        print('Failed to save to JSON')
-        logging.error('Failed to save to JSON', e)
 
 
-# Schedule the save_counts function to be called every 5 minutes
-schedule.every(1).minutes.do(save_counts)
 
-schedule.every(1).minute.do(save_to_json)
 
-# Schedule the commit_and_push function to be called every hour
-# schedule.every(1).hours.do(commit_and_push)
-schedule.every(1).minutes.do(commit_and_push)
 
-# Start the listeners
-with keyboard.Listener(on_press=on_press) as k_listener, mouse.Listener(on_click=on_click) as m_listener:
-    try:
-        if os.path.exists(lock_file):
-            print("Another instance of the script is already running. Exiting.")
-            sys.exit()
-        else:
-            with open(lock_file, 'w') as file:
-                file.write("Lock file for script instance management.")
-        print('Listening...')
-        key_count, click_count = getLastcount()
-        start_date, end_date = getDates()
-        print(f"Start date: {start_date}")
-        print(f"End date: {end_date}")
-        print("Key Count: ", key_count, "Click Count: ", click_count)
+def analyseEvents(eventArray_p: list[object]):
+    # print('list',eventArray_p )
+    print('analyse')
+
+    pressEvents = list(filter(lambda event: isEventOfType(event, 'Press'), eventArray_p))
+    clickEvents = list(filter(lambda event: isEventOfType(event, 'Click'), eventArray_p))
+
+    data = {
+        "AmountOfClicks": len(clickEvents),
+        "AmountOfPress": len(pressEvents),
+        "AmountOfCopy": isPattern(pressEvents, '\\x03'),
+        "AmountOfPaste": isPattern(pressEvents, '\\x16'),
+        "AmountOfSave": isPattern(pressEvents, '\\x13'),
+        "AmountOfCut": isPattern(pressEvents, '\\x18'),
+        "AmountOfUndo": isPattern(pressEvents, '\\x1a'),
+        "AmountOfRedo": isPattern(pressEvents, '\\x19'),
+        "AmountOfSelectAll": isPattern(pressEvents, '\\x01'),
+        "AmountOfFind": isPattern(pressEvents, '\\x06'),
+        "AmountOfReplace": isPattern(pressEvents, '\\x08'),
+        "AmountOfPrint": isPattern(pressEvents, '\\x10')
+    }
+
+    if os.path.exists('stats.json'):
+        with open('stats.json', 'r') as f:
+            existing_data = json.load(f)
+        for key, value in data.items():
+            if key in existing_data:
+                existing_data[key] += value
+            else:
+                existing_data[key] = value
+        data = existing_data
+
+    with open('stats.json', 'w') as f:
+        json.dump(data, f, indent=4)
+
+
+
+    
+    
+
+
+def updateEventArray(eventType:str, pressedKey: str = None, y: int = None, x: int = None, buttonPressed: bool = None ):
+    #create json object
+    eventJSON = {'Event': eventType, 'key': pressedKey or "", "buttonPressed": buttonPressed or "", "y": y or '', "x": x or ''}
+
+    #add to array
+    EventArray.append(eventJSON)
+
+    # print('length', len(EventArray))
+
+    if len(EventArray) > 10:
+        analyseEvents(EventArray)
+        print('clear')
+        EventArray.clear()
+
+
+
+
+
+def onPressEventHandler(key):
+    # print('key: '+ str(key))
+    updateEventArray("Press", str(key))
+
+def onClickEventHandler(x, y, button, pressed):
+    # print('button: '+ str(button))
+    # print('y: '+ str(y) + 'x: '+ str(x))
+    # print('pressed: '+ str(pressed))
+    updateEventArray("Click", "", y, x, pressed)
+
+
+
+
+def eventListener():
+    with keyboard.Listener(on_press=onPressEventHandler) as k_listener, mouse.Listener(on_click=onClickEventHandler) as m_listener:
         while True:
-            schedule.run_pending()
             time.sleep(1)
+
+
+def getTimeFromLockFile() -> datetime:
+    with open(lockFile, 'r') as lockfile:
+        lines = lockfile.readlines()
+        for line in lines:
+            match = re.search(timePattern, line)
+            if match:
+                return datetime.strptime(match.group(),"%Y-%m-%d %H:%M:%S.%f")
+
+
+def writeLockFile():
+    with open(lockFile, 'w') as file:
+                file.write(str(datetime.now()))
+                file.write('/n')
+                file.write("Lock file for script instance management.")
+
+
+def continueScriptCheck() -> bool: 
+    if not os.path.exists(repo_dir + lockFile):
+                writeLockFile()
+                return True
+    
+    lastStartDateTime = getTimeFromLockFile()
+
+    if lastStartDateTime.date() != datetime.now().date():
+        print('started not today')
+        os.remove(lockFile)
+        writeLockFile()
+        return True 
+    else:
+        print('started today')
+        sys.exit()
+        return False
+
+
+if __name__ == "__main__":
+    print('start')
+
+    try:
+        if not continueScriptCheck():
+            sys.exit()
+
+        eventListener()
+
+        
     except Exception as e:
-        logging.error('Script stopped due to error: %s', e)
-        raise
+        print('error', e)
+
     finally:
-        logging.info('Script ended')
-        os.remove(lock_file)
-        logging.info('Lock file removed.')
+        os.remove(lockFile)
+

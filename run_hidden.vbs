@@ -1,1 +1,0 @@
-CreateObject("Wscript.Shell").Run """" & "C:\Python312\python.exe" & """" & " " & """" & "C:\Tim-Paris-Schule\OwnProjects\Matteo406\keylog.py" & """", 0, False
