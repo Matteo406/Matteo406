@@ -12,33 +12,19 @@ Python            61 hrs 6 mins   █▒░░░░░░░░░░░░░�
 Markdown          56 hrs 47 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.65 %
 ```
 
-<!--END_SECTION:waka-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
 <!--START_SECTION:activity-->
-<!--START_SECTION:activity-->
-
-```txt
-From: 21 May 2024 - To: 06 June 2024
-
-Total Keystrokes: 78627
-Total Mouse Clicks: 19689
-```
-
-<!--END_SECTION:activity-->
+| Keyboard Shortcut | Description | Occurrences |
+| --- | --- | --- |
+| AmountOfClicks | AmountOfClicks | 84 |
+| AmountOfPress | AmountOfPress | 257 |
+| AmountOfCopy | AmountOfCopy | 2 |
+| AmountOfPaste | AmountOfPaste | 3 |
+| AmountOfSave | AmountOfSave | 7 |
+| AmountOfCut | AmountOfCut | 1 |
+| AmountOfUndo | AmountOfUndo | 1 |
+| AmountOfRedo | AmountOfRedo | 0 |
+| AmountOfSelectAll | AmountOfSelectAll | 1 |
+| AmountOfFind | AmountOfFind | 2 |
+| AmountOfReplace | AmountOfReplace | 0 |
+| AmountOfPrint | AmountOfPrint | 0 |
 <!--END_SECTION:activity-->
