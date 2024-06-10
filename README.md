@@ -12,24 +12,6 @@ Python            61 hrs 6 mins   █▒░░░░░░░░░░░░░�
 Markdown          56 hrs 47 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.65 %
 ```
 
-<!--END_SECTION:waka-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
-<!--END_SECTION:activity-->
 <!--START_SECTION:activity-->
 | Keyboard Shortcut | Description | Occurrences |
 | --- | --- | --- |
