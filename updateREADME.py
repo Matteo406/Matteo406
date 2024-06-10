@@ -11,7 +11,7 @@ with open('README.md', 'r+') as readme:
 
     stats = ''
 
-    stats += 'keyboard events: /n'
+    stats += 'keyboard events: \n'
 
 
     for key, value in data.items():
