@@ -28,8 +28,9 @@ jobs:
               stats = ''
               for key, value in data.items():
                   percentage = (value / total) * 100
-                  bars = '█' * int(percentage / 5) + '░' * (20 - int(percentage / 5))
-                  stats += f'{key:<15} {value} hrs {bars} {percentage:.2f} %\n'
+                #   bars = '█' * int(percentage / 5) + '░' * (20 - int(percentage / 5))
+                #   stats += f'{key:<15} {value} {bars} {percentage:.2f} %\n'
+                stats += f'{key:<15} {value} {percentage:.2f} %\n'
               new_content = re.sub('<!--START_SECTION:activity-->.*<!--END_SECTION:activity-->', f'<!--START_SECTION:activity-->\n{stats}<!--END_SECTION:activity-->', content, flags=re.DOTALL)
               readme.seek(0)
               readme.write(new_content)
