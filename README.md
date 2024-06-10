@@ -13,18 +13,5 @@ Markdown          56 hrs 47 mins  █░░░░░░░░░░░░░░�
 ```
 
 <!--START_SECTION:activity-->
-| Keyboard Shortcut | Description | Occurrences |
-| --- | --- | --- |
-| AmountOfClicks | AmountOfClicks | 84 |
-| AmountOfPress | AmountOfPress | 257 |
-| AmountOfCopy | AmountOfCopy | 2 |
-| AmountOfPaste | AmountOfPaste | 3 |
-| AmountOfSave | AmountOfSave | 7 |
-| AmountOfCut | AmountOfCut | 1 |
-| AmountOfUndo | AmountOfUndo | 1 |
-| AmountOfRedo | AmountOfRedo | 0 |
-| AmountOfSelectAll | AmountOfSelectAll | 1 |
-| AmountOfFind | AmountOfFind | 2 |
-| AmountOfReplace | AmountOfReplace | 0 |
-| AmountOfPrint | AmountOfPrint | 0 |
+AmountOfPrint   0 hrs ░░░░░░░░░░░░░░░░░░░░ 0.00 %
 <!--END_SECTION:activity-->
