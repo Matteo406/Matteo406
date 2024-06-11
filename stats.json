@@ -1,14 +1,14 @@
 {
-    "AmountOfClicks": 4841,
-    "AmountOfPress": 3523,
-    "AmountOfCopy": 72,
-    "AmountOfPaste": 80,
-    "AmountOfSave": 46,
-    "AmountOfCut": 7,
-    "AmountOfUndo": 20,
+    "AmountOfClicks": 5803,
+    "AmountOfPress": 4754,
+    "AmountOfCopy": 89,
+    "AmountOfPaste": 101,
+    "AmountOfSave": 77,
+    "AmountOfCut": 10,
+    "AmountOfUndo": 22,
     "AmountOfRedo": 0,
     "AmountOfSelectAll": 1,
-    "AmountOfFind": 17,
+    "AmountOfFind": 18,
     "AmountOfReplace": 0,
     "AmountOfPrint": 1
 }
