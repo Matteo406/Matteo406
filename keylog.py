@@ -24,7 +24,7 @@ lockFile = 'script.lock'
 timePattern = r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6}"
 
 # Configure logging
-logging.basicConfig(filename=repo_dir + 'taskLog2.log', level=logging.INFO, format='%(asctime)s %(message)s')
+logging.basicConfig(filename=repo_dir + 'app.log', level=logging.INFO, format='%(name)s - %(levelname)s - %(message)s')
 
 
 EventArray = []
@@ -47,15 +47,6 @@ def isPattern(eventArray_p: list[object],  patternPartOne: str = None, patternPa
         # Remove the extra quotes from the event key
         event_key = event['key'].strip("'")
 
-        if event_key == patternPartOne:
-            print('works')
-        else:
-            print('shit')
-
-        # # check for first pattern part
-        # if not event['key'] == patternPartOne:
-        #     print('skip')
-        #     continue
         
         #check for first pattern only first 
         if event_key == patternPartOne and patternPartTwo is None:
@@ -91,12 +82,15 @@ def isPattern(eventArray_p: list[object],  patternPartOne: str = None, patternPa
 
 
 
+import logging
+
 def analyseEvents(eventArray_p: list[object]):
-    # print('list',eventArray_p )
-    print('analyse')
+    logging.info('Starting to analyse events.')
 
     pressEvents = list(filter(lambda event: isEventOfType(event, 'Press'), eventArray_p))
     clickEvents = list(filter(lambda event: isEventOfType(event, 'Click'), eventArray_p))
+
+    logging.info(f'Found {len(pressEvents)} press events and {len(clickEvents)} click events.')
 
     data = {
         "AmountOfClicks": len(clickEvents),
@@ -113,7 +107,13 @@ def analyseEvents(eventArray_p: list[object]):
         "AmountOfPrint": isPattern(pressEvents, '\\x10')
     }
 
+    logging.info('Generated data from events.')
+
     statsFilePath = repo_dir + 'stats.json'
+
+    if not statsFilePath:
+        logging.info('no stats file path found')
+        statsFilePath = os.getcwd()
 
     if os.path.exists(statsFilePath):
         with open(statsFilePath, 'r') as f:
@@ -125,8 +125,12 @@ def analyseEvents(eventArray_p: list[object]):
                 existing_data[key] = value
         data = existing_data
 
+    logging.info('Updated existing data with new data.')
+
     with open(statsFilePath, 'w') as f:
         json.dump(data, f, indent=4)
+
+    logging.info('Saved data to file. %s', statsFilePath)
 
 
 
@@ -143,7 +147,7 @@ def updateEventArray(eventType:str, pressedKey: str = None, y: int = None, x: in
 
     # print('length', len(EventArray))
 
-    if len(EventArray) > 10:
+    if len(EventArray) > 50:
         analyseEvents(EventArray)
         print('clear')
         EventArray.clear()
@@ -182,6 +186,7 @@ schedule.every(1).hours.do(commit_and_push)
 
 
 def eventListener():
+    logging.info('Starting event listeners.')
     with keyboard.Listener(on_press=onPressEventHandler) as k_listener, mouse.Listener(on_click=onClickEventHandler) as m_listener:
         while True:
             schedule.run_pending()
@@ -195,50 +200,54 @@ def getTimeFromLockFile() -> datetime:
             match = re.search(timePattern, line)
             if match:
                 return datetime.strptime(match.group(),"%Y-%m-%d %H:%M:%S.%f")
-
+        logging.warning('No match found in lock file.')
 
 def writeLockFile():
     with open(lockFile, 'w') as file:
-                file.write(str(datetime.now()))
-                file.write('/n')
-                file.write("Lock file for script instance management.")
+        file.write(str(datetime.now()))
+        file.write('/n')
+        file.write("Lock file for script instance management.")
+        logging.info('Lock file written.')
 
 
 def continueScriptCheck() -> bool: 
     if not os.path.exists(repo_dir + lockFile):
-                writeLockFile()
-                return True
-    
+        logging.info('Lock file does not exist. Writing lock file.')
+        writeLockFile()
+        return True
+
     lastStartDateTime = getTimeFromLockFile()
 
     if lastStartDateTime.date() != datetime.now().date():
-        print('started not today')
+        logging.info('Script not started today. Removing and writing lock file.')
         os.remove(lockFile)
         writeLockFile()
         return True 
     else:
-        print('started today')
+        logging.info('Script started today. Exiting.')
         sys.exit()
         return False
     
 
 
 if __name__ == "__main__":
-    print('start')
+    logging.info('Start')
 
     try:
         if not continueScriptCheck():
+            logging.warning('Script check failed. Exiting.')
             sys.exit()
 
         if not repo_dir:
+            logging.error("Error: repo_dir is empty")
             sys.exit("Error: repo_dir is empty")
 
         eventListener()
 
-        
     except Exception as e:
-        print('error', e)
+        logging.error('Error occurred: %s', e)
 
     finally:
         os.remove(lockFile)
+        logging.info('Lock file removed.')
 
