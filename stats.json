@@ -1,14 +1,14 @@
 {
-    "AmountOfClicks": 6878,
-    "AmountOfPress": 8167,
-    "AmountOfCopy": 108,
-    "AmountOfPaste": 122,
-    "AmountOfSave": 109,
-    "AmountOfCut": 10,
-    "AmountOfUndo": 25,
-    "AmountOfRedo": 0,
-    "AmountOfSelectAll": 3,
-    "AmountOfFind": 19,
+    "AmountOfClicks": 7234,
+    "AmountOfPress": 9902,
+    "AmountOfCopy": 126,
+    "AmountOfPaste": 137,
+    "AmountOfSave": 135,
+    "AmountOfCut": 11,
+    "AmountOfUndo": 26,
+    "AmountOfRedo": 2,
+    "AmountOfSelectAll": 5,
+    "AmountOfFind": 20,
     "AmountOfReplace": 0,
-    "AmountOfPrint": 1
+    "AmountOfPrint": 3
 }
