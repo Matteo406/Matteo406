@@ -24,11 +24,7 @@ lockFile = 'script.lock'
 timePattern = r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6}"
 
 # Configure logging
-logging.basicConfig(filename=repo_dir + 'app.log', level=logging.INFO, format='%(name)s - %(levelname)s - %(message)s')
-
-
-EventArray = []
-   
+logging.basicConfig(filename=repo_dir + 'app.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
 def isEventOfType(currentEvent: object, eventType: str):
@@ -82,7 +78,7 @@ def isPattern(eventArray_p: list[object],  patternPartOne: str = None, patternPa
 
 
 
-import logging
+
 
 def analyseEvents(eventArray_p: list[object]):
     logging.info('Starting to analyse events.')
@@ -145,7 +141,6 @@ def updateEventArray(eventType:str, pressedKey: str = None, y: int = None, x: in
     #add to array
     EventArray.append(eventJSON)
 
-    # print('length', len(EventArray))
 
     if len(EventArray) > 50:
         analyseEvents(EventArray)
@@ -176,9 +171,8 @@ def commit_and_push():
         repo.git.push()
         logging.info('Script git pushed')
     except Exception as e:
-        print('Failed to push to repo')
+        print(f'Failed to push to repo: {str(e)}')
         logging.error('Failed to push to repo', e)
-    # Log script finish
 
 
 # Schedule the commit_and_push function to be called every hour
@@ -233,6 +227,9 @@ def continueScriptCheck() -> bool:
 if __name__ == "__main__":
     logging.info('Start')
 
+    EventArray = []
+
+
     try:
         if not continueScriptCheck():
             logging.warning('Script check failed. Exiting.')
@@ -248,6 +245,7 @@ if __name__ == "__main__":
         logging.error('Error occurred: %s', e)
 
     finally:
+        commit_and_push()
         os.remove(lockFile)
         logging.info('Lock file removed.')
 
