@@ -1,13 +1,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 09 August 2022 - To: 30 June 2024
+From: 09 August 2022 - To: 01 July 2024
 
 TypeScript        475 hrs 40 mins █████████▓░░░░░░░░░░░░░░░   38.14 %
-JavaScript        303 hrs 46 mins ██████░░░░░░░░░░░░░░░░░░░   24.36 %
-AL                198 hrs 22 mins ████░░░░░░░░░░░░░░░░░░░░░   15.91 %
+JavaScript        303 hrs 46 mins ██████░░░░░░░░░░░░░░░░░░░   24.35 %
+AL                198 hrs 22 mins ████░░░░░░░░░░░░░░░░░░░░░   15.90 %
 Python            66 hrs 13 mins  █▒░░░░░░░░░░░░░░░░░░░░░░░   05.31 %
-Markdown          57 hrs 35 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.62 %
+Markdown          57 hrs 39 mins  █░░░░░░░░░░░░░░░░░░░░░░░░   04.62 %
 ```
 
 <!--END_SECTION:waka-->
