@@ -146,7 +146,6 @@ def flush_buffer():
             event_buffer.clear()  # Clear the buffer after processing
         flush_timer = Timer(BUFFER_FLUSH_INTERVAL, flush_buffer)
         flush_timer.start()
-        commitChanges()
 
 
 def commitChanges():
