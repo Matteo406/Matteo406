@@ -1,7 +1,7 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 09 August 2022 - To: 31 July 2024
+From: 09 August 2022 - To: 01 August 2024
 
 TypeScript        485 hrs 34 mins █████████▒░░░░░░░░░░░░░░░   37.60 %
 JavaScript        303 hrs 48 mins ██████░░░░░░░░░░░░░░░░░░░   23.52 %
