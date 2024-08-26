@@ -5,7 +5,7 @@ import sys
 from pynput.keyboard import Key, Listener
 from pynput import keyboard, mouse
 
-log_file = 'keystrokes.json'
+log_file = 'stats.json'
 max_buffer_size = 10
 
 
