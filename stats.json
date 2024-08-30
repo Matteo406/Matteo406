@@ -1,15 +1,15 @@
 [
     {
         "key": "'a'",
-        "value": 114
+        "value": 115
     },
     {
         "key": "'s'",
-        "value": 183
+        "value": 184
     },
     {
         "key": "'d'",
-        "value": 72
+        "value": 73
     },
     {
         "key": "'f'",
@@ -17,15 +17,15 @@
     },
     {
         "key": "'\u00f6'",
-        "value": 18
+        "value": 19
     },
     {
         "key": "'l'",
-        "value": 71
+        "value": 72
     },
     {
         "key": "'k'",
-        "value": 32
+        "value": 33
     },
     {
         "key": "'m'",
@@ -49,7 +49,7 @@
     },
     {
         "key": "Key.ctrl_l",
-        "value": 470
+        "value": 471
     },
     {
         "key": "'\\x0b'",
@@ -69,7 +69,7 @@
     },
     {
         "key": "Key.enter",
-        "value": 182
+        "value": 183
     },
     {
         "key": "Key.backspace",
@@ -97,7 +97,7 @@
     },
     {
         "key": "'\\x16'",
-        "value": 82
+        "value": 83
     },
     {
         "key": "Key.right",
@@ -109,7 +109,7 @@
     },
     {
         "key": "Key.space",
-        "value": 331
+        "value": 332
     },
     {
         "key": "Key.tab",
