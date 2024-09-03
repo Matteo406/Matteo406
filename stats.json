@@ -1,155 +1,155 @@
 [
     {
         "key": "'a'",
-        "value": 423
+        "value": 829
     },
     {
         "key": "'s'",
-        "value": 474
+        "value": 866
     },
     {
         "key": "'d'",
-        "value": 246
+        "value": 492
     },
     {
         "key": "'f'",
-        "value": 115
+        "value": 231
     },
     {
         "key": "'\u00f6'",
-        "value": 24
+        "value": 25
     },
     {
         "key": "'l'",
-        "value": 237
+        "value": 457
     },
     {
         "key": "'k'",
-        "value": 90
+        "value": 120
     },
     {
         "key": "'m'",
-        "value": 114
+        "value": 257
     },
     {
         "key": "'c'",
-        "value": 292
+        "value": 582
     },
     {
         "key": "'e'",
-        "value": 715
+        "value": 1490
     },
     {
         "key": "'h'",
-        "value": 262
+        "value": 524
     },
     {
         "key": "'g'",
-        "value": 113
+        "value": 183
     },
     {
         "key": "Key.ctrl_l",
-        "value": 3194
+        "value": 6229
     },
     {
         "key": "'\\x0b'",
-        "value": 22
+        "value": 30
     },
     {
         "key": "'\\x03'",
-        "value": 262
+        "value": 474
     },
     {
         "key": "'\\x13'",
-        "value": 408
+        "value": 830
     },
     {
         "key": "Key.up",
-        "value": 214
+        "value": 365
     },
     {
         "key": "Key.enter",
-        "value": 709
+        "value": 1222
     },
     {
         "key": "Key.backspace",
-        "value": 1194
+        "value": 2095
     },
     {
         "key": "'p'",
-        "value": 162
+        "value": 285
     },
     {
         "key": "'r'",
-        "value": 334
+        "value": 647
     },
     {
         "key": "Key.shift",
-        "value": 929
+        "value": 1743
     },
     {
         "key": "'('",
-        "value": 24
+        "value": 74
     },
     {
         "key": "\"'\"",
-        "value": 3
+        "value": 4
     },
     {
         "key": "'\\x16'",
-        "value": 304
+        "value": 516
     },
     {
         "key": "Key.right",
-        "value": 649
+        "value": 1100
     },
     {
         "key": "','",
-        "value": 35
+        "value": 66
     },
     {
         "key": "Key.space",
-        "value": 189198
+        "value": 190485
     },
     {
         "key": "Key.tab",
-        "value": 355
+        "value": 637
     },
     {
         "key": "Key.alt_l",
-        "value": 149
+        "value": 209
     },
     {
         "key": "<76>",
-        "value": 3
+        "value": 15
     },
     {
         "key": "Key.left",
-        "value": 735
+        "value": 1377
     },
     {
         "key": "Key.down",
-        "value": 450
+        "value": 726
     },
     {
         "key": "'i'",
-        "value": 378
+        "value": 703
     },
     {
         "key": "'n'",
-        "value": 362
+        "value": 756
     },
     {
         "key": "'t'",
-        "value": 519
+        "value": 1165
     },
     {
         "key": "Key.alt_gr",
-        "value": 255
+        "value": 308
     },
     {
         "key": "'@'",
-        "value": 15
+        "value": 19
     },
     {
         "key": "'#'",
@@ -157,51 +157,51 @@
     },
     {
         "key": "'y'",
-        "value": 69
+        "value": 110
     },
     {
         "key": "'{'",
-        "value": 23
+        "value": 41
     },
     {
         "key": "':'",
-        "value": 18
+        "value": 30
     },
     {
         "key": "Key.shift_r",
-        "value": 304
+        "value": 534
     },
     {
         "key": "'\"'",
-        "value": 78
+        "value": 191
     },
     {
         "key": "'v'",
-        "value": 69
+        "value": 149
     },
     {
         "key": "'['",
-        "value": 11
+        "value": 15
     },
     {
         "key": "'j'",
-        "value": 24
+        "value": 35
     },
     {
         "key": "'o'",
-        "value": 315
+        "value": 737
     },
     {
         "key": "'T'",
-        "value": 23
+        "value": 32
     },
     {
         "key": "'\\x18'",
-        "value": 58
+        "value": 95
     },
     {
         "key": "'\\x1a'",
-        "value": 82
+        "value": 194
     },
     {
         "key": "']'",
@@ -209,71 +209,71 @@
     },
     {
         "key": "'L'",
-        "value": 9
+        "value": 13
     },
     {
         "key": "'<'",
-        "value": 10
-    },
-    {
-        "key": "Key.delete",
-        "value": 32
-    },
-    {
-        "key": "'>'",
-        "value": 10
-    },
-    {
-        "key": "Key.cmd",
-        "value": 46
-    },
-    {
-        "key": "'3'",
         "value": 18
     },
     {
+        "key": "Key.delete",
+        "value": 55
+    },
+    {
+        "key": "'>'",
+        "value": 17
+    },
+    {
+        "key": "Key.cmd",
+        "value": 116
+    },
+    {
+        "key": "'3'",
+        "value": 24
+    },
+    {
         "key": "'A'",
-        "value": 15
+        "value": 22
     },
     {
         "key": "'F'",
-        "value": 20
+        "value": 29
     },
     {
         "key": "'E'",
-        "value": 7
-    },
-    {
-        "key": "'u'",
-        "value": 217
-    },
-    {
-        "key": "'\\x06'",
-        "value": 30
-    },
-    {
-        "key": "'P'",
-        "value": 21
-    },
-    {
-        "key": "'='",
-        "value": 9
-    },
-    {
-        "key": "'R'",
-        "value": 9
-    },
-    {
-        "key": "'H'",
         "value": 12
     },
     {
+        "key": "'u'",
+        "value": 380
+    },
+    {
+        "key": "'\\x06'",
+        "value": 72
+    },
+    {
+        "key": "'P'",
+        "value": 34
+    },
+    {
+        "key": "'='",
+        "value": 26
+    },
+    {
+        "key": "'R'",
+        "value": 14
+    },
+    {
+        "key": "'H'",
+        "value": 19
+    },
+    {
         "key": "')'",
-        "value": 2
+        "value": 13
     },
     {
         "key": "Key.f2",
-        "value": 4
+        "value": 16
     },
     {
         "key": "'_'",
@@ -281,99 +281,99 @@
     },
     {
         "key": "'z'",
-        "value": 16
+        "value": 21
     },
     {
         "key": "'1'",
-        "value": 53
+        "value": 66
     },
     {
         "key": "'7'",
-        "value": 10
-    },
-    {
-        "key": "Key.f1",
-        "value": 7
-    },
-    {
-        "key": "'.'",
-        "value": 77
-    },
-    {
-        "key": "'-'",
-        "value": 29
-    },
-    {
-        "key": "'I'",
-        "value": 37
-    },
-    {
-        "key": "'w'",
-        "value": 74
-    },
-    {
-        "key": "'b'",
-        "value": 100
-    },
-    {
-        "key": "'V'",
-        "value": 13
-    },
-    {
-        "key": "['^']",
-        "value": 4
-    },
-    {
-        "key": "'/'",
-        "value": 62
-    },
-    {
-        "key": "'O'",
-        "value": 7
-    },
-    {
-        "key": "'N'",
-        "value": 18
-    },
-    {
-        "key": "'x'",
-        "value": 47
-    },
-    {
-        "key": "'\\x01'",
-        "value": 42
-    },
-    {
-        "key": "'?'",
-        "value": 18
-    },
-    {
-        "key": "'+'",
-        "value": 1
-    },
-    {
-        "key": "'\\x14'",
-        "value": 10
-    },
-    {
-        "key": "'\\x17'",
-        "value": 100
-    },
-    {
-        "key": "'W'",
         "value": 12
     },
     {
-        "key": "'\\x05'",
-        "value": 1
+        "key": "Key.f1",
+        "value": 8
     },
     {
-        "key": "'\\x12'",
+        "key": "'.'",
+        "value": 155
+    },
+    {
+        "key": "'-'",
+        "value": 50
+    },
+    {
+        "key": "'I'",
+        "value": 82
+    },
+    {
+        "key": "'w'",
+        "value": 157
+    },
+    {
+        "key": "'b'",
+        "value": 143
+    },
+    {
+        "key": "'V'",
+        "value": 19
+    },
+    {
+        "key": "['^']",
         "value": 7
     },
     {
+        "key": "'/'",
+        "value": 123
+    },
+    {
+        "key": "'O'",
+        "value": 22
+    },
+    {
+        "key": "'N'",
+        "value": 26
+    },
+    {
+        "key": "'x'",
+        "value": 89
+    },
+    {
+        "key": "'\\x01'",
+        "value": 77
+    },
+    {
+        "key": "'?'",
+        "value": 38
+    },
+    {
+        "key": "'+'",
+        "value": 7
+    },
+    {
+        "key": "'\\x14'",
+        "value": 20
+    },
+    {
+        "key": "'\\x17'",
+        "value": 204
+    },
+    {
+        "key": "'W'",
+        "value": 16
+    },
+    {
+        "key": "'\\x05'",
+        "value": 4
+    },
+    {
+        "key": "'\\x12'",
+        "value": 11
+    },
+    {
         "key": "'!'",
-        "value": 3
+        "value": 8
     },
     {
         "key": "Key.caps_lock",
@@ -381,23 +381,23 @@
     },
     {
         "key": "'S'",
-        "value": 21
+        "value": 43
     },
     {
         "key": "'K'",
-        "value": 7
+        "value": 8
     },
     {
         "key": "'0'",
-        "value": 41
+        "value": 47
     },
     {
         "key": "'4'",
-        "value": 24
+        "value": 27
     },
     {
         "key": "'2'",
-        "value": 30
+        "value": 42
     },
     {
         "key": "['`']",
@@ -405,27 +405,27 @@
     },
     {
         "key": "'G'",
-        "value": 7
+        "value": 8
     },
     {
         "key": "'\\x19'",
-        "value": 43
+        "value": 47
     },
     {
         "key": "'C'",
-        "value": 9
+        "value": 21
     },
     {
         "key": "'5'",
-        "value": 17
+        "value": 20
     },
     {
         "key": "'&'",
-        "value": 3
+        "value": 13
     },
     {
         "key": "'B'",
-        "value": 14
+        "value": 20
     },
     {
         "key": "'\u00fc'",
@@ -433,7 +433,7 @@
     },
     {
         "key": "'6'",
-        "value": 10
+        "value": 11
     },
     {
         "key": "'9'",
@@ -441,11 +441,11 @@
     },
     {
         "key": "'$'",
-        "value": 3
+        "value": 5
     },
     {
         "key": "Key.ctrl_r",
-        "value": 2
+        "value": 4
     },
     {
         "key": "'\\t'",
@@ -461,7 +461,7 @@
     },
     {
         "key": "'\u00e4'",
-        "value": 3
+        "value": 4
     },
     {
         "key": "Key.f9",
@@ -473,7 +473,7 @@
     },
     {
         "key": "'\\x10'",
-        "value": 2
+        "value": 3
     },
     {
         "key": "'\u00e8'",
@@ -485,19 +485,19 @@
     },
     {
         "key": "'D'",
-        "value": 10
+        "value": 49
     },
     {
         "key": "Key.media_volume_mute",
-        "value": 2
+        "value": 9
     },
     {
         "key": "Key.media_volume_up",
-        "value": 18
+        "value": 78
     },
     {
         "key": "'M'",
-        "value": 3
+        "value": 7
     },
     {
         "key": "'\\x0c'",
@@ -505,31 +505,31 @@
     },
     {
         "key": "'*'",
-        "value": 11
+        "value": 12
     },
     {
         "key": "'}'",
-        "value": 6
+        "value": 11
     },
     {
         "key": "'|'",
-        "value": 14
+        "value": 16
     },
     {
         "key": "'J'",
-        "value": 1
+        "value": 2
     },
     {
         "key": "';'",
-        "value": 1
+        "value": 3
     },
     {
         "key": "'Z'",
-        "value": 6
+        "value": 7
     },
     {
         "key": "['\u00a8']",
-        "value": 2
+        "value": 3
     },
     {
         "key": "['~']",
@@ -541,7 +541,7 @@
     },
     {
         "key": "'\\x15'",
-        "value": 1
+        "value": 2
     },
     {
         "key": "'Q'",
@@ -553,10 +553,42 @@
     },
     {
         "key": "'U'",
-        "value": 3
+        "value": 9
     },
     {
         "key": "<55>",
+        "value": 1
+    },
+    {
+        "key": "Key.esc",
+        "value": 4
+    },
+    {
+        "key": "'\\x02'",
+        "value": 5
+    },
+    {
+        "key": "'Y'",
+        "value": 1
+    },
+    {
+        "key": "Key.media_volume_down",
+        "value": 68
+    },
+    {
+        "key": "'\u00a7'",
+        "value": 1
+    },
+    {
+        "key": "'%'",
+        "value": 2
+    },
+    {
+        "key": "<191>",
+        "value": 1
+    },
+    {
+        "key": "'\\x07'",
         "value": 1
     }
 ]
