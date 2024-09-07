@@ -1,95 +1,95 @@
 [
     {
         "key": "'a'",
-        "value": 1690
+        "value": 2132
     },
     {
         "key": "'s'",
-        "value": 1661
+        "value": 2003
     },
     {
         "key": "'d'",
-        "value": 1009
+        "value": 1210
     },
     {
         "key": "'f'",
-        "value": 423
+        "value": 514
     },
     {
         "key": "'\u00f6'",
-        "value": 33
+        "value": 40
     },
     {
         "key": "'l'",
-        "value": 941
+        "value": 1136
     },
     {
         "key": "'k'",
-        "value": 241
+        "value": 285
     },
     {
         "key": "'m'",
-        "value": 552
+        "value": 682
     },
     {
         "key": "'c'",
-        "value": 1109
+        "value": 1324
     },
     {
         "key": "'e'",
-        "value": 2840
+        "value": 3423
     },
     {
         "key": "'h'",
-        "value": 1078
+        "value": 1363
     },
     {
         "key": "'g'",
-        "value": 440
+        "value": 532
     },
     {
         "key": "Key.ctrl_l",
-        "value": 9698
+        "value": 10686
     },
     {
         "key": "'\\x0b'",
-        "value": 59
+        "value": 61
     },
     {
         "key": "'\\x03'",
-        "value": 857
+        "value": 966
     },
     {
         "key": "'\\x13'",
-        "value": 1342
+        "value": 1509
     },
     {
         "key": "Key.up",
-        "value": 997
+        "value": 1052
     },
     {
         "key": "Key.enter",
-        "value": 2329
+        "value": 2574
     },
     {
         "key": "Key.backspace",
-        "value": 4111
+        "value": 4736
     },
     {
         "key": "'p'",
-        "value": 556
+        "value": 671
     },
     {
         "key": "'r'",
-        "value": 1345
+        "value": 1634
     },
     {
         "key": "Key.shift",
-        "value": 2781
+        "value": 3109
     },
     {
         "key": "'('",
-        "value": 129
+        "value": 132
     },
     {
         "key": "\"'\"",
@@ -97,59 +97,59 @@
     },
     {
         "key": "'\\x16'",
-        "value": 906
+        "value": 1032
     },
     {
         "key": "Key.right",
-        "value": 2158
+        "value": 2499
     },
     {
         "key": "','",
-        "value": 117
+        "value": 155
     },
     {
         "key": "Key.space",
-        "value": 227085
+        "value": 254943
     },
     {
         "key": "Key.tab",
-        "value": 1185
+        "value": 1239
     },
     {
         "key": "Key.alt_l",
-        "value": 632
+        "value": 650
     },
     {
         "key": "<76>",
-        "value": 27
+        "value": 29
     },
     {
         "key": "Key.left",
-        "value": 2641
+        "value": 3256
     },
     {
         "key": "Key.down",
-        "value": 1158
+        "value": 1317
     },
     {
         "key": "'i'",
-        "value": 1425
+        "value": 1750
     },
     {
         "key": "'n'",
-        "value": 1540
+        "value": 1852
     },
     {
         "key": "'t'",
-        "value": 2300
+        "value": 2796
     },
     {
         "key": "Key.alt_gr",
-        "value": 592
+        "value": 656
     },
     {
         "key": "'@'",
-        "value": 32
+        "value": 34
     },
     {
         "key": "'#'",
@@ -157,51 +157,51 @@
     },
     {
         "key": "'y'",
-        "value": 265
+        "value": 333
     },
     {
         "key": "'{'",
-        "value": 65
+        "value": 101
     },
     {
         "key": "':'",
-        "value": 66
+        "value": 89
     },
     {
         "key": "Key.shift_r",
-        "value": 946
+        "value": 1137
     },
     {
         "key": "'\"'",
-        "value": 363
+        "value": 430
     },
     {
         "key": "'v'",
-        "value": 278
+        "value": 321
     },
     {
         "key": "'['",
-        "value": 20
+        "value": 28
     },
     {
         "key": "'j'",
-        "value": 71
+        "value": 84
     },
     {
         "key": "'o'",
-        "value": 1602
+        "value": 1889
     },
     {
         "key": "'T'",
-        "value": 37
+        "value": 47
     },
     {
         "key": "'\\x18'",
-        "value": 175
+        "value": 194
     },
     {
         "key": "'\\x1a'",
-        "value": 366
+        "value": 413
     },
     {
         "key": "']'",
@@ -209,67 +209,67 @@
     },
     {
         "key": "'L'",
-        "value": 15
+        "value": 18
     },
     {
         "key": "'<'",
-        "value": 30
+        "value": 35
     },
     {
         "key": "Key.delete",
-        "value": 87
+        "value": 95
     },
     {
         "key": "'>'",
-        "value": 23
+        "value": 26
     },
     {
         "key": "Key.cmd",
-        "value": 221
+        "value": 256
     },
     {
         "key": "'3'",
-        "value": 55
+        "value": 62
     },
     {
         "key": "'A'",
-        "value": 32
+        "value": 40
     },
     {
         "key": "'F'",
-        "value": 37
+        "value": 46
     },
     {
         "key": "'E'",
-        "value": 28
+        "value": 30
     },
     {
         "key": "'u'",
-        "value": 770
+        "value": 943
     },
     {
         "key": "'\\x06'",
-        "value": 106
+        "value": 112
     },
     {
         "key": "'P'",
-        "value": 45
+        "value": 56
     },
     {
         "key": "'='",
-        "value": 47
+        "value": 51
     },
     {
         "key": "'R'",
-        "value": 20
+        "value": 21
     },
     {
         "key": "'H'",
-        "value": 23
+        "value": 28
     },
     {
         "key": "')'",
-        "value": 20
+        "value": 23
     },
     {
         "key": "Key.f2",
@@ -281,95 +281,95 @@
     },
     {
         "key": "'z'",
-        "value": 58
+        "value": 73
     },
     {
         "key": "'1'",
-        "value": 129
+        "value": 153
     },
     {
         "key": "'7'",
-        "value": 25
+        "value": 32
     },
     {
         "key": "Key.f1",
-        "value": 13
+        "value": 14
     },
     {
         "key": "'.'",
-        "value": 295
+        "value": 371
     },
     {
         "key": "'-'",
-        "value": 99
+        "value": 104
     },
     {
         "key": "'I'",
-        "value": 163
+        "value": 189
     },
     {
         "key": "'w'",
-        "value": 390
+        "value": 455
     },
     {
         "key": "'b'",
-        "value": 292
+        "value": 381
     },
     {
         "key": "'V'",
-        "value": 26
+        "value": 27
     },
     {
         "key": "['^']",
-        "value": 11
+        "value": 14
     },
     {
         "key": "'/'",
-        "value": 208
+        "value": 245
     },
     {
         "key": "'O'",
-        "value": 23
+        "value": 25
     },
     {
         "key": "'N'",
-        "value": 35
+        "value": 38
     },
     {
         "key": "'x'",
-        "value": 140
+        "value": 149
     },
     {
         "key": "'\\x01'",
-        "value": 147
+        "value": 161
     },
     {
         "key": "'?'",
-        "value": 83
+        "value": 101
     },
     {
         "key": "'+'",
-        "value": 15
+        "value": 20
     },
     {
         "key": "'\\x14'",
-        "value": 51
+        "value": 54
     },
     {
         "key": "'\\x17'",
-        "value": 521
+        "value": 583
     },
     {
         "key": "'W'",
-        "value": 19
+        "value": 24
     },
     {
         "key": "'\\x05'",
-        "value": 6
+        "value": 7
     },
     {
         "key": "'\\x12'",
-        "value": 30
+        "value": 31
     },
     {
         "key": "'!'",
@@ -381,59 +381,59 @@
     },
     {
         "key": "'S'",
-        "value": 71
+        "value": 85
     },
     {
         "key": "'K'",
-        "value": 11
+        "value": 12
     },
     {
         "key": "'0'",
-        "value": 124
+        "value": 139
     },
     {
         "key": "'4'",
-        "value": 53
+        "value": 54
     },
     {
         "key": "'2'",
-        "value": 77
+        "value": 88
     },
     {
         "key": "['`']",
-        "value": 91
+        "value": 99
     },
     {
         "key": "'G'",
-        "value": 10
+        "value": 15
     },
     {
         "key": "'\\x19'",
-        "value": 110
+        "value": 111
     },
     {
         "key": "'C'",
-        "value": 30
+        "value": 38
     },
     {
         "key": "'5'",
-        "value": 43
+        "value": 55
     },
     {
         "key": "'&'",
-        "value": 28
+        "value": 29
     },
     {
         "key": "'B'",
-        "value": 28
+        "value": 33
     },
     {
         "key": "'\u00fc'",
-        "value": 13
+        "value": 17
     },
     {
         "key": "'6'",
-        "value": 49
+        "value": 56
     },
     {
         "key": "'9'",
@@ -441,11 +441,11 @@
     },
     {
         "key": "'$'",
-        "value": 12
+        "value": 18
     },
     {
         "key": "Key.ctrl_r",
-        "value": 10
+        "value": 11
     },
     {
         "key": "'\\t'",
@@ -457,11 +457,11 @@
     },
     {
         "key": "'q'",
-        "value": 11
+        "value": 12
     },
     {
         "key": "'\u00e4'",
-        "value": 10
+        "value": 15
     },
     {
         "key": "Key.f9",
@@ -485,7 +485,7 @@
     },
     {
         "key": "'D'",
-        "value": 66
+        "value": 74
     },
     {
         "key": "Key.media_volume_mute",
@@ -493,11 +493,11 @@
     },
     {
         "key": "Key.media_volume_up",
-        "value": 163
+        "value": 165
     },
     {
         "key": "'M'",
-        "value": 12
+        "value": 17
     },
     {
         "key": "'\\x0c'",
@@ -505,15 +505,15 @@
     },
     {
         "key": "'*'",
-        "value": 20
+        "value": 24
     },
     {
         "key": "'}'",
-        "value": 19
+        "value": 25
     },
     {
         "key": "'|'",
-        "value": 22
+        "value": 26
     },
     {
         "key": "'J'",
@@ -525,7 +525,7 @@
     },
     {
         "key": "'Z'",
-        "value": 9
+        "value": 13
     },
     {
         "key": "['\u00a8']",
@@ -553,7 +553,7 @@
     },
     {
         "key": "'U'",
-        "value": 9
+        "value": 11
     },
     {
         "key": "<55>",
@@ -565,7 +565,7 @@
     },
     {
         "key": "'\\x02'",
-        "value": 5
+        "value": 6
     },
     {
         "key": "'Y'",
@@ -581,7 +581,7 @@
     },
     {
         "key": "'%'",
-        "value": 2
+        "value": 4
     },
     {
         "key": "<191>",
@@ -597,7 +597,7 @@
     },
     {
         "key": "<222>",
-        "value": 1
+        "value": 2
     },
     {
         "key": "<192>",
@@ -618,5 +618,9 @@
     {
         "key": "'\\x1c'",
         "value": 2
+    },
+    {
+        "key": "<53>",
+        "value": 1
     }
 ]
