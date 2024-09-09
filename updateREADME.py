@@ -107,6 +107,9 @@ if __name__ == '__main__':
     readme_file_path = sys.argv[2]
 
 
+    print("python v",sys.version)
+
+
     json_file_path = './stats.json'  # Replace with the actual path to your JSON file
     readme_file_path = './README.md'  # Replace with the actual path to your README.md file
     main(json_file_path, readme_file_path)
