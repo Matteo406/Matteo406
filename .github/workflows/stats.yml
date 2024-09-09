@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: 3.8
       - name: Update README
-        run: python updateREADME.py ./README.md ./stats.json
+        run: python .\updateREADME.py .\stats.json .\README.md
       - name: Commit and push if changed
         run: |
           git diff
