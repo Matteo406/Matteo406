@@ -13,3 +13,6 @@ taskLog.log
 script.lock
 taskLog.log
 taskLog.log
+
+.mypy_cache
+_pychache_
