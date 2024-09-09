@@ -1,7 +1,7 @@
 import json
 import re
 import sys
-
+import platform
 
 def clean_key(key):
     # create a match patter that replaces certain kesy with a more readable format
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     readme_file_path = sys.argv[2]
 
 
-    print("python v",sys.version)
+    print("python v",platform.python_version())
 
 
     json_file_path = './stats.json'  # Replace with the actual path to your JSON file
