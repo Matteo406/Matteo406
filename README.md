@@ -1,7 +1,7 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 09 August 2022 - To: 01 February 2025
+From: 09 August 2022 - To: 02 February 2025
 
 TypeScript                 679 hrs 9 mins  ██████████░░░░░░░░░░░░░░░   39.56 %
 AL                         325 hrs 1 min   ████▓░░░░░░░░░░░░░░░░░░░░   18.93 %
